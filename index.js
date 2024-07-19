@@ -49,7 +49,7 @@ function getWords() {
   //https://random-word-api.herokuapp.com/word?number=100
   
   axios
-    .get('https://random-word-form.herokuapp.com/random/noun/a?count=100')
+    .get('https://random-word-form.herokuapp.com/random/noun?count=100')
     .then(function (response) {
       response.data.forEach((word) => {
         if (word.length < 10) {
