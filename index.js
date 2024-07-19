@@ -15,7 +15,7 @@ const button = document.querySelector('.button');
 init();
 
 function init() {
-  buttonChange('gamd loading..');
+  buttonChange('game loading..');
   getWords();
   wordInput.addEventListener('input', checkMatch);
 }
@@ -45,9 +45,11 @@ function checkStatus() {
 
 //단어불러오기
 function getWords() {
-  //random word API 사용
+  //random word API 사용 (herocu 참조 추정: 서버 자주 터질 수 있음)
+  //https://random-word-api.herokuapp.com/word?number=100
+  
   axios
-    .get('https://random-word-api.herokuapp.com/word?number=100')
+    .get('https://random-word-form.herokuapp.com/random/noun/a?count=100')
     .then(function (response) {
       response.data.forEach((word) => {
         if (word.length < 10) {
